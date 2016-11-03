@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.wpatter.school.life.RoleEntity;
 import org.wpatter.school.life.utils.BaseEntity;
 
 @Entity
@@ -24,18 +25,20 @@ public class UserEntity extends BaseEntity<Long> {
 	private String name;
 	private Date birthDate;
 	private String docs;
+	private RoleEntity role;
 
 	public UserEntity() {
 
 	}
 
-	public UserEntity(String login, String password, String name, Date birthDate, String docs) {
+	public UserEntity(String login, String password, String name, Date birthDate, String docs, RoleEntity role) {
 		super();
 		this.login = login;
 		this.password = password;
 		this.name = name;
 		this.birthDate = birthDate;
 		this.docs = docs;
+		this.role = role;
 	}
 
 	public String getLogin() {
@@ -76,6 +79,14 @@ public class UserEntity extends BaseEntity<Long> {
 
 	public void setDocs(String docs) {
 		this.docs = docs;
+	}
+
+	public RoleEntity getRole() {
+		return role;
+	}
+
+	public void setRole(RoleEntity role) {
+		this.role = role;
 	}
 
 }
