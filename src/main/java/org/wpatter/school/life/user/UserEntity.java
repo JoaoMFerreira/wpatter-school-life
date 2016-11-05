@@ -5,7 +5,14 @@ import java.util.Date;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.wpatter.school.life.RoleEntity;
 import org.wpatter.school.life.utils.BaseEntity;
@@ -15,16 +22,34 @@ import org.wpatter.school.life.utils.BaseEntity;
 @AttributeOverride(name = "id", column = @Column(name = "registration_user"))
 public class UserEntity extends BaseEntity<Long> {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -251643754181562435L;
-
-	private String login;
+	
+	@NotNull
+	@Size(min = 4, max = 128)
+	@Column(name = "email", length = 128, nullable = false)
+	private String email;
+	
+	@NotNull
+	@Size(min = 4, max = 128)
+	@Column(name = "password", length = 128, nullable = false)
 	private String password;
+	
+	@NotNull
+	@Size(min = 4, max = 128)
+	@Column(name = "name", length = 128, nullable = false)
 	private String name;
+	
+	@NotNull
+	@Column(name = "birth_date", nullable = false)
+	@Temporal(TemporalType.DATE)
 	private Date birthDate;
+	
+	@NotNull
+	@Column(name = "docs")
 	private String docs;
+	
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="id_role", nullable=false)
 	private RoleEntity role;
 
 	public UserEntity() {
@@ -33,7 +58,7 @@ public class UserEntity extends BaseEntity<Long> {
 
 	public UserEntity(String login, String password, String name, Date birthDate, String docs, RoleEntity role) {
 		super();
-		this.login = login;
+		this.email = login;
 		this.password = password;
 		this.name = name;
 		this.birthDate = birthDate;
@@ -41,12 +66,12 @@ public class UserEntity extends BaseEntity<Long> {
 		this.role = role;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setEmail(String login) {
+		this.email = login;
 	}
 
 	public String getPassword() {

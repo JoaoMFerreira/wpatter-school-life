@@ -15,7 +15,7 @@ CREATE TABLE `CD_USER` (
   `email` varchar(128) NOT NULL UNIQUE,
   `password` varchar(128) NOT NULL,
   `name` varchar(128) NOT NULL,
-  `birthDate` date NOT NULL,
+  `birth_date` date NOT NULL,
   `docs` blob,
   `id_role` int(11) NOT NULL,
   PRIMARY KEY (`registration_user`),
@@ -51,8 +51,7 @@ CREATE TABLE `CD_ABSENCE` (
 CREATE TABLE `RL_STUDENT_DISC` (
   `registration_user` int(11) NOT NULL,
   `id_disc` int(11) NOT NULL,
-  KEY `registration_user` (`registration_user`),
-  KEY `id_disc` (`id_disc`),
+  PRIMARY KEY (`registration_user`, `id_disc`),
   CONSTRAINT `RL_STUDENT_DISC_ibfk_1` FOREIGN KEY (`registration_user`) REFERENCES `CD_USER` (`registration_user`),
   CONSTRAINT `RL_STUDENT_DISC_ibfk_2` FOREIGN KEY (`id_disc`) REFERENCES `CD_DISC` (`id_disc`)
 ) ;

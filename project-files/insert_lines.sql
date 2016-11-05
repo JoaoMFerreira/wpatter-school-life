@@ -4,16 +4,16 @@ INSERT INTO school_life.CD_ROLE (role_name) VALUES ('ROLE_ALUNO');
 INSERT INTO school_life.CD_ROLE (role_name) VALUES ('ROLE_PROF');
 INSERT INTO school_life.CD_ROLE (role_name) VALUES ('ROLE_RESPON');
 
-INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birthDate`,`docs`,`id_role`)
+INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birth_date`,`docs`,`id_role`)
 VALUES(123456,'aluno@aluno.com','123','aluno',date(sysdate()),'',2);
 
-INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birthDate`,`docs`,`id_role`)
+INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birth_date`,`docs`,`id_role`)
 VALUES(123457,'prof@prof.com','123','professor',date(sysdate()),'',3);
 
-INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birthDate`,`docs`,`id_role`)
+INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birth_date`,`docs`,`id_role`)
 VALUES(123458,'admin@admin.com','123','administrador',date(sysdate()),'',1);
 
-INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birthDate`,`docs`,`id_role`)
+INSERT INTO `school_life`.`CD_USER`(`registration_user`,`email`,`password`,`name`,`birth_date`,`docs`,`id_role`)
 VALUES(123459,'resp@resp.com','123','responsavel',date(sysdate()),'',4);
 
 INSERT INTO `school_life`.`CD_DISC` (`name`,`description`) VALUES ('matematica','5º Ano');

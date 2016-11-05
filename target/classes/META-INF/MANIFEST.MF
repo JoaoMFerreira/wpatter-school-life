@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: school-life
-Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: suportesoftbox
-Implementation-Vendor-Id: wpattern-school-life
-Build-Jdk: 1.8.0_03-Ubuntu
-Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
-
