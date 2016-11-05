@@ -26,3 +26,7 @@ INSERT INTO school_life.RL_USER_DISC (registration_user,id_disc) values (123456,
 INSERT INTO school_life.RL_USER_DISC (registration_user,id_disc) values (123456,3);
 
 INSERT INTO school_life.RL_STUDENT_RESP (registration_user, registration_user_resp) values (123456, 123459);
+
+INSERT INTO `school_life`.`cd_grade`(`id_disc`,`registration_user`,`value`,`semester`) VALUES (2,123456,10.0,'2016/2');
+
+INSERT INTO `school_life`.`cd_absence`(`absence_date`,`id_disc`,`registration_user`) VALUES (date(sysdate()), 2, 123456);

@@ -16,7 +16,7 @@ CREATE TABLE `CD_USER` (
   `password` varchar(128) NOT NULL,
   `name` varchar(128) NOT NULL,
   `birth_date` date NOT NULL,
-  `docs` blob,
+  `docs` varchar(255),
   `id_role` int(11) NOT NULL,
   PRIMARY KEY (`registration_user`),
   KEY `id_role` (`id_role`),
@@ -34,7 +34,7 @@ CREATE TABLE `CD_DISC` (
 
 CREATE TABLE `CD_ABSENCE` (
   `id_absence` int(11) NOT NULL AUTO_INCREMENT,
-  `date` date NOT NULL,
+  `absence_date` date NOT NULL,
   `id_disc` int(11) not null,
   `registration_user` int(11) not null,
   PRIMARY KEY (`id_absence`),
@@ -64,7 +64,7 @@ CREATE TABLE `RL_STUDENT_RESP` (
 ) ;
 
 CREATE TABLE `CD_GRADE` (
-  `id_grade` int(11) NOT NULL,
+  `id_grade` int(11) NOT NULL AUTO_INCREMENT,
   `id_disc` int(11) NOT NULL,
   `registration_user` int(11) NOT NULL,
   `value` double NOT NULL,
@@ -78,15 +78,15 @@ CREATE TABLE `CD_GRADE` (
 
 CREATE TABLE `CD_MATERIAL` (
   `id_disc` int(11) NOT NULL,
-  `material` blob,
-  KEY `id_disc` (`id_disc`),
+  `material` varchar(255),
+  key `id_disc` (`id_disc`),
   CONSTRAINT `CD_MATERIAL_ibfk_1` FOREIGN KEY (`id_disc`) REFERENCES `CD_DISC` (`id_disc`)
 ) ;
 
 CREATE TABLE `CD_QUESTION` (
   `id_question` int(11) NOT NULL AUTO_INCREMENT,
   `question` varchar(255) NOT NULL,
-  `options` varchar(600) NOT NULL,
+  `options` varchar(255) NOT NULL,
   `answer` varchar(5) NOT NULL,
   PRIMARY KEY (`id_question`)
 )
