@@ -26,12 +26,9 @@ CREATE TABLE `CD_USER` (
 
 CREATE TABLE `CD_DISC` (
   `id_disc` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(90) NOT NULL,
+  `name` varchar(128) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `registration_user` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_disc`),
-  KEY `registration_user` (`registration_user`),
-  CONSTRAINT `CD_DISC_ibfk_1` FOREIGN KEY (`registration_user`) REFERENCES `CD_USER` (`registration_user`)
+  PRIMARY KEY (`id_disc`)
 ) ;
 
 
@@ -48,7 +45,7 @@ CREATE TABLE `CD_ABSENCE` (
 ) ;
 
 
-CREATE TABLE `RL_STUDENT_DISC` (
+CREATE TABLE `RL_USER_DISC` (
   `registration_user` int(11) NOT NULL,
   `id_disc` int(11) NOT NULL,
   PRIMARY KEY (`registration_user`, `id_disc`),

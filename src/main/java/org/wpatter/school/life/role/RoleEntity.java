@@ -1,4 +1,4 @@
-package org.wpatter.school.life;
+package org.wpatter.school.life.role;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;

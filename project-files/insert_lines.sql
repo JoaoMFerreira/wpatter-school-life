@@ -22,7 +22,7 @@ INSERT INTO `school_life`.`CD_DISC` (`name`,`description`) VALUES ('ciencias','5
 INSERT INTO `school_life`.`CD_DISC` (`name`,`description`) VALUES ('historia','5º Ano');
 INSERT INTO `school_life`.`CD_DISC` (`name`,`description`) VALUES ('geografia','5º Ano');
 
-INSERT INTO school_life.RL_STUDENT_DISC (registration_user,id_disc) values (123456,2);
-INSERT INTO school_life.RL_STUDENT_DISC (registration_user,id_disc) values (123456,3);
+INSERT INTO school_life.RL_USER_DISC (registration_user,id_disc) values (123456,2);
+INSERT INTO school_life.RL_USER_DISC (registration_user,id_disc) values (123456,3);
 
 INSERT INTO school_life.RL_STUDENT_RESP (registration_user, registration_user_resp) values (123456, 123459);
