@@ -53,20 +53,11 @@ CREATE TABLE `RL_USER_DISC` (
   CONSTRAINT `RL_STUDENT_DISC_ibfk_2` FOREIGN KEY (`id_disc`) REFERENCES `CD_DISC` (`id_disc`)
 ) ;
 
-CREATE TABLE `RL_STUDENT_RESP` (
-  `registration_user` int(11) NOT NULL,
-  `registration_user_resp` int(11) NOT NULL,
-  KEY `registration_user` (`registration_user`),
-  KEY `registration_user_resp` (`registration_user_resp`),
-  PRIMARY KEY (`registration_user`, `registration_user_resp`),
-  CONSTRAINT `RL_STUDENT_RESP_ibfk_1` FOREIGN KEY (`registration_user`) REFERENCES `CD_USER` (`registration_user`),
-  CONSTRAINT `RL_STUDENT_RESP_ibfk_2` FOREIGN KEY (`registration_user_resp`) REFERENCES `CD_USER` (`registration_user`)
-) ;
-
 CREATE TABLE `CD_GRADE` (
-  `id_grade` int(11) NOT NULL AUTO_INCREMENT,
+  `id_grade` int(11) NOT NULL AUTO_INCREMENT,  
   `id_disc` int(11) NOT NULL,
   `registration_user` int(11) NOT NULL,
+  `description_labor` varchar(128) NOT NULL,
   `value` double NOT NULL,
   `semester` varchar(10) NOT NULL,
   PRIMARY KEY (`id_grade`),
@@ -75,6 +66,20 @@ CREATE TABLE `CD_GRADE` (
   CONSTRAINT `CD_GRADE_ibfk_1` FOREIGN KEY (`id_disc`) REFERENCES `CD_DISC` (`id_disc`),
   CONSTRAINT `CD_GRADE_ibfk_2` FOREIGN KEY (`registration_user`) REFERENCES `CD_USER` (`registration_user`)
 ) ;
+
+CREATE TABLE `CD_TASK` (
+	`id_task` int(11) NOT NULL AUTO_INCREMENT,
+	`id_disc` int(11) NOT NULL,
+	`registration_user` int(11) NOT NULL,
+    `description` varchar(255) NOT NULL,
+    `end_date` timestamp,
+    primary key (`id_task`),
+    KEY `id_disc` (`id_disc`),
+	KEY `registration_user` (`registration_user`),
+	CONSTRAINT `CD_TASK_ibfk_1` FOREIGN KEY (`id_disc`) REFERENCES `CD_DISC` (`id_disc`),
+	CONSTRAINT `CD_TASK_ibfk_2` FOREIGN KEY (`registration_user`) REFERENCES `CD_USER` (`registration_user`)
+);
+
 
 CREATE TABLE `CD_MATERIAL` (
   `id_disc` int(11) NOT NULL,
